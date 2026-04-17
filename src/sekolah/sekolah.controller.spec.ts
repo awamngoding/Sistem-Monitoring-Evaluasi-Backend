@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Test, TestingModule } from '@nestjs/testing';
 import { SekolahController } from './sekolah.controller';
 import { SekolahService } from './sekolah.service';

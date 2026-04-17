@@ -19,6 +19,7 @@ export class AssessmentController {
   create(@Body() dto: CreateAssessmentDto) {
     return this.assessmentService.create(dto);
   }
+
   @Get('sekolah/:id_sekolah')
   findBySekolah(
     @Param('id_sekolah') id_sekolah: string,
@@ -36,21 +37,24 @@ export class AssessmentController {
   toggleAktif(@Param('id') id: string) {
     return this.assessmentService.toggleAktif(+id);
   }
+
   @Patch(':id')
   update(@Param('id') id: string, @Body() body: any) {
     return this.assessmentService.update(+id, body);
   }
+
   @Post(':id/jawab')
   jawab(@Param('id') id: string, @Body() body: any) {
     return this.assessmentService.jawab(+id, body);
   }
+
   @Patch(':id/send')
   send(@Param('id') id: string) {
     return this.assessmentService.send(+id);
   }
 
   @Get()
-  findAll(@Query('jenis') jenis?: string) {
-    return this.assessmentService.findAll(jenis);
+  findAll(@Query('jenis') jenis?: string, @Query('id_ho') id_ho?: string) {
+    return this.assessmentService.findAll(jenis, id_ho ? +id_ho : undefined);
   }
 }

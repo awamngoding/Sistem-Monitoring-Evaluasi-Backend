@@ -6,6 +6,9 @@ import { UsersModule } from './users/users.module';
 import { RolesModule } from './roles/roles.module';
 import { AssessmentModule } from './assessment/assessment.module';
 import { SekolahModule } from './sekolah/sekolah.module';
+import { WilayahModule } from './wilayah/wilayah.module';
+import { ProgramModule } from './program/program.module';
+import { VendorModule } from './vendor/vendor.module';
 
 @Module({
   imports: [
@@ -17,7 +20,7 @@ import { SekolahModule } from './sekolah/sekolah.module';
       password: 'ypamdr17',
       database: 'sistem_monitoring_evaluasi_program',
       autoLoadEntities: true,
-      synchronize: false,
+      synchronize: true,
     }),
 
     AuthModule,
@@ -25,6 +28,9 @@ import { SekolahModule } from './sekolah/sekolah.module';
     RolesModule,
     AssessmentModule,
     SekolahModule,
+    WilayahModule,
+    ProgramModule,
+    VendorModule,
   ],
 })
 export class AppModule {}

@@ -1,5 +1,10 @@
 /* eslint-disable prettier/prettier */
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  CreateDateColumn,
+} from 'typeorm';
 
 @Entity('assessment_jawaban')
 export class AssessmentJawaban {
@@ -10,14 +15,18 @@ export class AssessmentJawaban {
   id_pertanyaan: number;
 
   @Column({ nullable: true })
-  id_user: number;
+  id_user: number; // ID Sekolah (dari login)
 
-  @Column({ nullable: true })
+  @Column({ type: 'text', nullable: true })
   jawaban: string;
 
-  @Column({ nullable: true })
+  // REVISI DI SINI: Tambahkan nullable: true
+  @Column({ type: 'int', default: 0, nullable: true })
   skor: number;
 
-  @Column({ nullable: true })
-  nama_pengisi: string;
+  @Column({ type: 'varchar', length: 255, nullable: true })
+  nama_pengisi: string; // Nama Guru (input manual di form)
+
+  @CreateDateColumn({ type: 'timestamp' })
+  created_at: Date; // Penanda waktu pengisian
 }

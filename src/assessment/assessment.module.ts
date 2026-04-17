@@ -4,6 +4,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Assessment } from './entities/assessment.entity';
 import { AssessmentPertanyaan } from './entities/assessment-pertanyaan.entity';
 import { AssessmentJawaban } from './entities/assessment-jawaban.entity';
+import { User } from '../users/user.entity';
+import { Sekolah } from '../sekolah/entities/sekolah.entity';
 
 import { AssessmentService } from './assessment.service';
 import { AssessmentController } from './assessment.controller';
@@ -14,6 +16,8 @@ import { AssessmentController } from './assessment.controller';
       Assessment,
       AssessmentPertanyaan,
       AssessmentJawaban,
+      User,
+      Sekolah,
     ]),
   ],
   controllers: [AssessmentController],

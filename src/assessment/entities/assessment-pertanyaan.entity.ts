@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
-@Entity('assessment_pertanyaan')
+@Entity('t_assessment_pertanyaan')
 export class AssessmentPertanyaan {
   @PrimaryGeneratedColumn()
   id_pertanyaan: number;
